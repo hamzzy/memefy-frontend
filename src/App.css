@@ -13,26 +13,45 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navb{
+  margin-left: auto;
+  font-size: 1.5em;
+
 }
 
-.App-link {
-  color: #61dafb;
+.navb,Nav.Link{
+  color: #011627;
+
+}
+.hero{
+  background: linear-gradient(0deg, rgba(32, 164, 243, 0.16), rgba(32, 164, 243, 0.16)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%),url('assets/images/hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:  567px;
+  margin-top:-90px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+    
+   
+
+.search{
+  position: absolute;
+  left: 256px;
+  top: 335px;
+}
+
+
+
+.txt{
+
+  margin-top:150px;
+  font-family: Rubik;
+font-style: normal;
+font-weight: 500;
+font-size: 40px;
+line-height: 47px;
+
+color: #333333;
 }
