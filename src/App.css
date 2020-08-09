@@ -37,17 +37,21 @@
    
 
 .search{
-  position: absolute;
-  left: 256px;
-  top: 335px;
+
+
 }
 
 
 
+.search .form-control{
+  width: 80%;
+  margin-left: 10px;
+  margin-top: 40px;
+  height: 100px;
+}
 .txt{
 
   margin-top:150px;
-  font-family: Rubik;
 font-style: normal;
 font-weight: 500;
 font-size: 40px;
