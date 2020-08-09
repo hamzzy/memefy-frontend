@@ -11,6 +11,7 @@ import {
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/dashboard";
+import Search from "./pages/SearchPage";
 function App() {
   return (
     <main>
@@ -24,6 +25,7 @@ function App() {
           <Route path="/signUp" component={Register}/>
 
           <Route path='/dashboard' component={Dashboard}/>
+          <Route path='/search'  component={Search}/>
 
 
 
