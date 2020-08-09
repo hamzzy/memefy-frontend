@@ -20,8 +20,8 @@ export class Header extends Component {
     <Nav className='navb justify-content-between'>
       <Nav.Link href="#home">Explore</Nav.Link>
       <Nav.Link  href="#link">API</Nav.Link>
-      <Nav.Link href=""><Link to="/login">Login</Link></Nav.Link>
-      <Button type="submit">SignUp</Button>
+      <Nav.Link href="/login">Login</Nav.Link>
+        <Link to='/signup'><Button type="submit">SignUp</Button></Link>
     </Nav>
     
   </Navbar.Collapse>
