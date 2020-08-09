@@ -7,16 +7,24 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+import Register from "./pages/Register/Register";
+import Login from "./pages/Login/Login";
+import Dashboard from "./pages/Dashboard/dashboard";
 function App() {
   return (
-    <div className="App ">
+    <main>
       <Router>
         <Switch>
-          <Route path="/">
-            <Index />
-          </Route>
+          <Route path="/" component={Index} exact/>
+
+
+          <Route path="/login" component={Login} />
+
+          <Route path="/signUp" component={Register}/>
+
+          <Route path='/dashboard' component={Dashboard}/>
+
 
 
         </Switch>
@@ -24,7 +32,7 @@ function App() {
 
 
 
-</div>
+</main>
   );
 }
 

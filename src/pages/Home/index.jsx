@@ -4,7 +4,7 @@ import {Container, Form, Jumbotron,Col,Row,Card,CardColumns} from "react-bootstr
 import Image from  "../../assets/images/Image.png";
 import Image1 from  "../../assets/images/Image(1).png";
 import Image2 from  "../../assets/images/Image(2).png";
-
+import Footer from '../../components/footer';
 
 class Index extends Component {
     render() {
@@ -65,7 +65,7 @@ class Index extends Component {
 
                 </div>
 
-
+<Footer/>
 
             </div>
         );

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
 import logo from '../assets/images/logo.svg'
+import {Link} from "react-router-dom";
 export class Header extends Component {
     render() {
         return (
             <div>
-                <Navbar expand="lg">
+                <Navbar expand="lg ml-4">
     <Navbar.Brand href="#home">
       <img
         alt=""
@@ -16,10 +17,10 @@ export class Header extends Component {
     </Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav" >
-    <Nav className='navb'>
+    <Nav className='navb justify-content-between'>
       <Nav.Link href="#home">Explore</Nav.Link>
-      <Nav.Link href="#link">API</Nav.Link>
-      <Nav.Link href="#link">Login</Nav.Link>
+      <Nav.Link  href="#link">API</Nav.Link>
+      <Nav.Link href=""><Link to="/login">Login</Link></Nav.Link>
       <Button type="submit">SignUp</Button>
     </Nav>
     

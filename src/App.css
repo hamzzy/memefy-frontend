@@ -33,7 +33,9 @@
 }
 
 
-    
+    .navb>a{
+      justify-content: space-between !important;
+    }
    
 
 .search{
