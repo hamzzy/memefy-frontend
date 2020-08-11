@@ -67,8 +67,19 @@ color: #333333;
 /* Login Page style class */
 .bg {
   background-color: #F8F8F8;
-  background-image: url('assets/images/Login_signup_image.png');
+}
+
+.bg-img {
+  background-color: #F8F8F8;
+  background-image: url('assets/images/signup_image.png');
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 767px) {
+  .overlap {
+    position: fixed;
+    z-index: 1;
+    width: 50%
+  }
 }
