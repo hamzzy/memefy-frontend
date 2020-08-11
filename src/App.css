@@ -61,3 +61,14 @@ line-height: 47px;
 
 color: #333333;
 }
+
+
+
+/* Login Page style class */
+.bg {
+  background-color: #F8F8F8;
+  background-image: url('assets/images/Login_signup_image.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
