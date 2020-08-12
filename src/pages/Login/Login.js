@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import logo from '../../assets/images/logo.svg';
-import signupImage from '../../assets/images/signup_image.png';
 import mobileLogo from '../../assets/images/mobile_Logo.svg';
 import {Container, Form, Navbar, Button, Row, Col} from "react-bootstrap";
 
@@ -10,17 +9,17 @@ class Login extends Component {
                 <Container fluid>
                     <Row d-flex>
 
-                        <Col lg={4} md={4} className="bg vh-100">
+                        <Col lg={4} md={4} className="bg min-vh-100">
                             {/* Navbar Brand Component */}
-                            <Navbar.Brand href="#home" className="mb-sm-4 mb-4 mt-2">
+                            <Navbar.Brand href="/" className="mb-sm-4 mb-4 mt-2">
                                 <img
-                                    alt=""
+                                    alt="Memefy Logo"
                                     src={mobileLogo}
                                     className="d-block d-sm-block d-md-none d-lg-none d-xl-none ml-4"
                                     fluid
                                 />{' '}
                                  <img
-                                    alt=""
+                                    alt="Memefy Logo"
                                     src={logo}
                                     className="d-none d-sm-none d-md-block d-lg-block d-xl-block ml-4"
                                     fluid
@@ -55,7 +54,7 @@ class Login extends Component {
                             </Container>
                         </Col>
                         {/*Display background Image at the side*/}
-                        <Col lg={8} md={8} className="d-none d-sm-none d-md-block bg-img vh-100">
+                        <Col lg={8} md={8} className="d-none d-sm-none d-md-block bg-img min-vh-100">
                             
                         </Col>
                     </Row>
