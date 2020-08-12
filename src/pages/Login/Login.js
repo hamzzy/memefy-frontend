@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import logo from '../../assets/images/logo.svg';
-import signupImage from '../../assets/images/signup_image.png';
 import mobileLogo from '../../assets/images/mobile_Logo.svg';
 import {Container, Form, Navbar, Button, Row, Col} from "react-bootstrap";
 
