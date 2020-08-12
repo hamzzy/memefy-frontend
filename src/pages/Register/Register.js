@@ -11,7 +11,7 @@ class Register extends Component {
 
                         <Col lg={4} md={4} className="bg min-vh-100">
                             {/* Navbar Brand Component */}
-                            <Navbar.Brand href="/" className="mb-sm-4 mb-4 mt-2">
+                            <Navbar.Brand href="/" className="">
                                 <img
                                     alt="Memefy Logo"
                                     src={mobileLogo}
@@ -26,9 +26,9 @@ class Register extends Component {
                                 />{' '}
                             </Navbar.Brand>
                             {/* Form Container */}
-                            <Container fluid clasName="mw-100 w-100 h-50">
+                            <Container fluid clasName="mw-100 w-100">
 
-                                <Form className="bg-white align-center rounded-lg m-2 mb-5 mb-md-5 mb-lg-5 p-4 mw-100 overlap">
+                                <Form className="bg-white align-center rounded-lg m-2 mb-5 mb-md-5 mb-lg-5 p-4 py-md-2 px-md-4 py-lg-3 px-lg-4 py-xl-2 px-xl-4 mw-100 overlap">
                                     <Form.Text className="h2">
                                         <h2 className="pb-3">Sign up</h2>
                                         <h3 className="text-muted">Fill the below to sign up</h3>
