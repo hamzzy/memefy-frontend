@@ -12,7 +12,7 @@ class Login extends Component {
 
                         <Col lg={4} md={4} className="bg vh-100">
                             {/* Navbar Brand Component */}
-                            <Navbar.Brand href="/home" className="mb-sm-4 mb-4 mt-2">
+                            <Navbar.Brand href="#home" className="mb-sm-4 mb-4 mt-2">
                                 <img
                                     alt=""
                                     src={mobileLogo}
@@ -26,7 +26,7 @@ class Login extends Component {
                                     fluid
                                 />{' '}
                             </Navbar.Brand>
-
+                            {/* Form Container */}
                             <Container fluid clasName="mw-100 w-100 h-50">
 
                                 <Form className="bg-white align-center rounded-lg m-2 mb-5 mb-md-5 mb-lg-5 p-4 mw-100 overlap">
@@ -54,7 +54,7 @@ class Login extends Component {
                                 
                             </Container>
                         </Col>
-
+                        {/*Display background Image at the side*/}
                         <Col lg={8} md={8} className="d-none d-sm-none d-md-block bg-img vh-100">
                             
                         </Col>

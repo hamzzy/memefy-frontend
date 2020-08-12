@@ -76,6 +76,7 @@ color: #333333;
   background-size: cover;
 }
 
+/* Media Querie to position form */
 @media only screen and (min-width: 767px) {
   .overlap {
     position: fixed;
