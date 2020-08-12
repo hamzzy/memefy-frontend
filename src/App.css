@@ -65,8 +65,15 @@ color: #333333;
 
 
 /* Login Page style class */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 .bg {
   background-color: #F8F8F8;
+}
+
+/* add background image */
+.font {
+  font-family: 'Rubik', sans-serif;
 }
 
 .bg-img {
@@ -84,3 +91,40 @@ color: #333333;
     width: 50%
   }
 }
+
+.head {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+.color-1 {
+  color: #000000;
+}
+
+.color-2 {
+  color: #787676;
+}
+
+.color-3 {
+  color: #1A1B4B;
+}
+
+.color-4 {
+  color: #011627;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.btn-bg {
+  background-color: #20A4F3 !important;
+  border-color: #20A4F3 !important;
+}
+
+
