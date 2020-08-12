@@ -1,44 +1,65 @@
 import React, {Component} from 'react';
-import logo from '../../assets/images/logo.svg'
-import {Container, Form, Navbar, Button} from "react-bootstrap";
+import logo from '../../assets/images/logo.svg';
+import signupImage from '../../assets/images/signup_image.png';
+import mobileLogo from '../../assets/images/mobile_Logo.svg';
+import {Container, Form, Navbar, Button, Row, Col} from "react-bootstrap";
 
 class Login extends Component {
     render() {
         return (
-            <div className="bg vh-100">
                 <Container fluid>
-                    <Navbar.Brand href="#home">
-                        <img
-                            alt="Memefy Logo"
-                            src={logo}
-                        
-                            className="d-inline-block p-2" fluid
-                        />{' '}
-                    </Navbar.Brand>
-                    <Form className="bg-white align-top rounded-lg m-2 p-4 w-50">
-                        <Form.Text className="h2">
-                            <h2 className="pb-3">Welcome!</h2>
-                            <h3 className="text-muted">Enter details to Login</h3>
-                        </Form.Text>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Control size="lg" type="email" placeholder="Email Address" className="mt-4 p-4" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Control size="lg" type="password" placeholder="Password" className="mt-4 p-4" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Remember me" className="mt-4" />
-                        </Form.Group>
-                        <Button variant="primary" type="submit" size="lg" block className="mt-4 p-3">
-                            Sign In
-                        </Button>
-                        <Form.Text className="h5 text-center mt-4">
-                            <p>Forget your Password?</p>
-                            <p>Don't have an account yet? <a href="/register" className="text-primary">Register here</a></p>
-                        </Form.Text>
-                    </Form>
+                    <Row d-flex>
+
+                        <Col lg={4} md={4} className="bg vh-100">
+                            {/* Navbar Brand Component */}
+                            <Navbar.Brand href="#home" className="mb-sm-4 mb-4 mt-2">
+                                <img
+                                    alt=""
+                                    src={mobileLogo}
+                                    className="d-block d-sm-block d-md-none d-lg-none d-xl-none ml-4"
+                                    fluid
+                                />{' '}
+                                 <img
+                                    alt=""
+                                    src={logo}
+                                    className="d-none d-sm-none d-md-block d-lg-block d-xl-block ml-4"
+                                    fluid
+                                />{' '}
+                            </Navbar.Brand>
+                            {/* Form Container */}
+                            <Container fluid clasName="mw-100 w-100 h-50">
+
+                                <Form className="bg-white align-center rounded-lg m-2 mb-5 mb-md-5 mb-lg-5 p-4 mw-100 overlap">
+                                    <Form.Text className="h2">
+                                        <h2 className="pb-3">Welcome!</h2>
+                                        <h3 className="text-muted">Enter details to Login</h3>
+                                    </Form.Text>
+                                    <Form.Group controlId="formBasicEmail">
+                                        <Form.Control size="lg" type="email" placeholder="Email Address" className="mt-4 p-4" />
+                                    </Form.Group>
+                                    <Form.Group controlId="formBasicPassword">
+                                        <Form.Control size="lg" type="password" placeholder="Password" className="mt-4 p-4" />
+                                    </Form.Group>
+                                    <Form.Group controlId="formBasicCheckbox">
+                                        <Form.Check type="checkbox" label="Remember me" className="mt-4" />
+                                    </Form.Group>
+                                    <Button variant="primary" type="submit" size="lg" block className="mt-4 p-3">
+                                        Sign In
+                                    </Button>
+                                    <Form.Text className="h5 text-center mt-4">
+                                        <p>Forget your Password?</p>
+                                        <p>Don't have an account yet? <a href="/register" className="text-primary">Register here</a></p>
+                                    </Form.Text>
+                                </Form>
+                                
+                            </Container>
+                        </Col>
+                        {/*Display background Image at the side*/}
+                        <Col lg={8} md={8} className="d-none d-sm-none d-md-block bg-img vh-100">
+                            
+                        </Col>
+                    </Row>
                 </Container>
-            </div>
         );
     }
 }
