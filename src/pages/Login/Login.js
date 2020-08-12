@@ -46,7 +46,7 @@ class Login extends Component {
                                         Sign In
                                     </Button>
                                     <Form.Text className="h5 text-center mt-4">
-                                        <p>Forget your Password?</p>
+                                        <p><a href="/resetpassword">Forget your Password?</a></p>
                                         <p>Don't have an account yet? <a href="/signup" className="text-primary">Register here</a></p>
                                     </Form.Text>
                                 </Form>

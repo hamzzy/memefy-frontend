@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
-import ResetPassword from "./Reset/Reset";
+import ResetPassword from "./pages/ResetPassword/Reset";
 import Dashboard from "./pages/Dashboard/dashboard";
 import Search from "./pages/SearchPage";
 function App() {
