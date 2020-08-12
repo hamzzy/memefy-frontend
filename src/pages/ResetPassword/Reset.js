@@ -28,7 +28,7 @@ class ResetPassword extends Component {
                             {/* Form Container */}
                             <Container fluid clasName="mw-100 w-100 h-50">
 
-                                <Form className="bg-white align-center rounded-lg m-2 mb-5 mb-md-5 mb-lg-5 p-4 mw-100 overlap">
+                                <Form className="bg-white align-middle rounded-lg mt-4 ml-2 mb-5 mb-md-5 mb-lg-5 p-4 mw-100 overlap">
                                     <Form.Text className="head">
                                         <p className="color-1">Reset Password</p>
                                         <p className="color-2">Enter your Email to get a reset link</p>
