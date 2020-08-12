@@ -58,7 +58,6 @@ class Login extends Component {
                         <Col lg={8} md={8} className="d-none d-sm-none d-md-block bg-img vh-100">
                             
                         </Col>
-
                     </Row>
                 </Container>
         );
