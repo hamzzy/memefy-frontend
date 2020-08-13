@@ -21,7 +21,7 @@ export class Header extends Component {
                       <Nav.Link href="#home" className="mx-3 navb">Explore</Nav.Link>
                       <Nav.Link  href="#link" className="mx-3 navb">API</Nav.Link>
                       <Nav.Link href="/login" className="mx-3 navb">Login</Nav.Link>
-                      <Link to='/signup' className="mt-1 ml-3"><Button type="submit" className="fs-20 btn-bg px-4 py-2 text-center">Sign Up</Button></Link>
+                      <Link to='/signup' className="mt-1 ml-3"><Button type="submit" className="fs-20 btn-bg px-4" size="lg">Sign Up</Button></Link>
                     </Nav>
                   </Navbar.Collapse>
                 </Navbar>
