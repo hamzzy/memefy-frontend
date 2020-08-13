@@ -1,3 +1,4 @@
+/* Home Page style class START */
 .App {
   text-align: center;
 }
@@ -13,16 +14,14 @@
   }
 }
 
-.navb{
+.navb {
   margin-left: auto;
-  font-size: 1.5em;
-
 }
 
-.navb,Nav.Link{
-  color: #011627;
-
+.navb,Nav.Link {
+  color: #011627 !important;
 }
+
 .hero{
   background: linear-gradient(0deg, rgba(32, 164, 243, 0.16), rgba(32, 164, 243, 0.16)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%),url('assets/images/hero.jpg');
   background-repeat: no-repeat;
@@ -32,46 +31,39 @@
 
 }
 
-
-    .navb>a{
-      justify-content: space-between !important;
-    }
-   
-
-.search{
-
-
+.navb>a {
+    justify-content: space-between !important;
 }
-
-
-
-.search .form-control{
+   
+.search .form-control {
   width: 80%;
   margin-left: 10px;
   margin-top: 40px;
   height: 100px;
 }
-.txt{
 
+.txt {
   margin-top:150px;
-font-style: normal;
-font-weight: 500;
-font-size: 40px;
-line-height: 47px;
-
-color: #333333;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  color: #333333;
 }
 
+.fs-24 {
+  font-size: 24px;
+}
+/* Login Page style class END */
 
 
-/* Login Page style class */
+/* Login Page style class START */
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 .bg {
   background-color: #F8F8F8;
 }
 
-/* add background image */
 .font {
   font-family: 'Rubik', sans-serif;
 }
@@ -83,7 +75,7 @@ color: #333333;
   background-size: cover;
 }
 
-/* Media Querie to position form */
+
 @media only screen and (min-width: 767px) {
   .overlap {
     position: fixed;
@@ -119,7 +111,7 @@ color: #333333;
 }
 
 .fs-20 {
-  font-size: 20px;
+  font-size: 20px !important;
 }
 
 .btn-bg {
@@ -127,4 +119,4 @@ color: #333333;
   border-color: #20A4F3 !important;
 }
 
-
+/* Login Page style class END */

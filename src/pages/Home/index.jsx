@@ -9,7 +9,7 @@ import Footer from '../../components/footer';
 class Index extends Component {
     render() {
         return (
-            <div>
+            <div className="font">
                 <Header/>
 
                 <div>
