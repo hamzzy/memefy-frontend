@@ -142,7 +142,7 @@ button.but_home:focus {
   }
 
   .sm-19 {
-    font-size: 19.4341px;
+    font-size: 19.4341px !important;
   }
 
 }
