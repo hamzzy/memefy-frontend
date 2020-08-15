@@ -27,7 +27,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height:  567px;
-  margin-top:-90px;
+  /* margin-top:-90px; */
 
 }
 
@@ -43,17 +43,61 @@
 }
 
 .txt {
-  margin-top:150px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 500; 
   font-size: 40px;
   line-height: 47px;
   color: #333333;
+  width: 670px;
+}
+
+.ex {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  
 }
 
 .fs-24 {
   font-size: 24px;
 }
+
+.bd-dk {
+  border: 1px solid #000000 !important;
+}
+
+.user-func {
+  visibility: hidden;
+  
+}
+
+.Hover-effect:hover {
+  background-color: rgba(5, 3, 3, 0.5);
+}
+
+.Hover-effect:hover .user-func {
+  visibility: visible;
+}
+
+@media only screen and (max-width: 990px) {
+  .sm-24 {
+    font-size: 24px;
+  }
+
+  .sm-14 {
+    font-size: 14.8611px;
+  }
+
+  .sm-19 {
+    font-size: 19.4341px;
+  }
+
+}
+
+check-font {
+  font-size: 20px;
+}
+
 /* Login Page style class END */
 
 
@@ -61,7 +105,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 .bg {
-  background-color: #F8F8F8;
+  background-color: #E5E5E5;
 }
 
 .font {
@@ -69,7 +113,7 @@
 }
 
 .bg-img {
-  background-color: #F8F8F8;
+  background-color: #E5E5E5;
   background-image: url('assets/images/signup_image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -104,6 +148,10 @@
 
 .color-4 {
   color: #011627;
+}
+
+.color-5 {
+  color: #333333;
 }
 
 .fs-18 {
