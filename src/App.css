@@ -1,3 +1,4 @@
+/* Home Page style class START */
 .App {
   text-align: center;
 }
@@ -13,30 +14,53 @@
   }
 }
 
-.navb{
+.navb {
   margin-left: auto;
-  font-size: 1.5em;
-
 }
 
-.navb,Nav.Link{
-  color: #011627;
-
+.navb,Nav.Link {
+  color: #011627 !important;
 }
+
 .hero{
   background: linear-gradient(0deg, rgba(32, 164, 243, 0.16), rgba(32, 164, 243, 0.16)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%),url('assets/images/hero.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height:  567px;
-  margin-top:-90px;
+  /* margin-top:-90px; */
 
 }
 
+.navb>a {
+    justify-content: space-between !important;
+}
 
-    .navb>a{
-      justify-content: space-between !important;
-    }
-   
+.search .form-control {
+  width: 80%;
+  margin-left: 10px;
+  margin-top: 40px;
+  height: 100px;
+}
+
+.txt {
+  font-style: normal;
+  font-weight: 500; 
+  font-size: 40px;
+  line-height: 47px;
+  color: #333333;
+  width: 670px;
+}
+
+.ex {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  
+}
+
+.fs-24 {
+  font-size: 24px;
+=======
 /* Error 404 Page CSS */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
 .contaner {
@@ -71,6 +95,7 @@ button.but_home {
   margin-top: 10px;
   font-size: 17px;
 }
+  
 button.but_home:focus {
   outline: 0;
 }
@@ -89,47 +114,64 @@ button.but_home:focus {
   }
 }
 
-
-
-.search .form-control{
-  width: 80%;
-  margin-left: 10px;
-  margin-top: 40px;
-  height: 100px;
-}
-.txt{
-
-  margin-top:150px;
-font-style: normal;
-font-weight: 500;
-font-size: 40px;
-line-height: 47px;
-
-color: #333333;
+.bd-dk {
+  border: 1px solid #000000 !important;
 }
 
+.user-func {
+  visibility: hidden;
+  
+}
+
+.Hover-effect:hover {
+  background-color: rgba(5, 3, 3, 0.5);
+}
+
+.Hover-effect:hover .user-func {
+  visibility: visible;
+}
+
+@media only screen and (max-width: 990px) {
+  .sm-24 {
+    font-size: 24px;
+  }
+
+  .sm-14 {
+    font-size: 14.8611px;
+  }
+
+  .sm-19 {
+    font-size: 19.4341px;
+  }
+
+}
+
+check-font {
+  font-size: 20px;
+}
+
+/* Login Page style class END */
 
 
-/* Login Page style class */
+/* Login Page style class START */
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 .bg {
-  background-color: #F8F8F8;
+  background-color: #E5E5E5;
 }
 
-/* add background image */
 .font {
   font-family: 'Rubik', sans-serif;
 }
 
 .bg-img {
-  background-color: #F8F8F8;
+  background-color: #E5E5E5;
   background-image: url('assets/images/signup_image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* Media Querie to position form */
+
 @media only screen and (min-width: 767px) {
   .overlap {
     position: fixed;
@@ -160,12 +202,16 @@ color: #333333;
   color: #011627;
 }
 
+.color-5 {
+  color: #333333;
+}
+
 .fs-18 {
   font-size: 18px;
 }
 
 .fs-20 {
-  font-size: 20px;
+  font-size: 20px !important;
 }
 
 .btn-bg {
@@ -173,4 +219,4 @@ color: #333333;
   border-color: #20A4F3 !important;
 }
 
-
+/* Login Page style class END */
