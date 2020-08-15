@@ -18,7 +18,7 @@ class Index extends Component {
 
 
                             <h1 className='txt'>
-                                The best place  to find funny meme Photos and video
+                                The best place  to find funny meme Photos and video 
                             </h1>
                             <Form >
                                 <Form.Control  type="text" className="search" placeholder="Search for meme photos and videos" />
@@ -37,26 +37,26 @@ class Index extends Component {
 
                             </Row>
                     </div>
-                        <div className='container-lg'>
+                    <div className='container-lg'>
 
-                            <CardColumns>
-                                    <Card style={{ width: '18rem' }}>
-                                        <Card.Img variant="top" src={Image} />
-                                    </Card>
+                        <CardColumns>
                                 <Card style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={Image1} />
+                                    <Card.Img variant="top" src={Image} />
                                 </Card>
-                                <Card style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={Image2} />
-                                </Card>
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={Image1} />
+                            </Card>
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={Image2} />
+                            </Card>
 
 
 
 
 
-                                </CardColumns>
+                        </CardColumns>
 
-                        </div>
+                    </div>
 
 
 
