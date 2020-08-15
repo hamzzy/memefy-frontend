@@ -11,6 +11,8 @@ import Login from "./pages/Login/Login";
 import ResetPassword from "./pages/ResetPassword/Reset";
 import Dashboard from "./pages/Dashboard/dashboard";
 import Search from "./pages/SearchPage";
+import Error from "./pages/Error/Error";
+
 function App() {
   return (
     <main>
@@ -26,6 +28,7 @@ function App() {
           <Route path="/resetpassword" component={ResetPassword} /> 
           <Route path='/dashboard' component={Dashboard}/>
           <Route path='/search'  component={Search}/>
+          <Route component={Error}/>
 
 
 

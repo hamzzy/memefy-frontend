@@ -17,7 +17,8 @@ class Index extends Component {
         return (
             <div className="font bg h-100 pb-5"> 
 
-                    <Container className='hero' fluid>
+
+                 <Container className='hero' fluid>
                             <Header/>
                         <Jumbotron className='text-center bg-transparent w-75 my-5 mx-auto' fluid>
                             <h1 className='txt sm-24 text-left w-100'>
@@ -50,7 +51,8 @@ class Index extends Component {
                                 </Form.Control>
                                 </Col>
                             </Row>
-                    </Container>
+
+                   </Container>
                    
 
                             <CardColumns className="bg mr-sm-3 mr-md-3 mr-lg-3 mr-xl-3 ml-0" fluid>
@@ -153,6 +155,9 @@ class Index extends Component {
                                         </Card.ImgOverlay>
                                     </Card>
                             </CardColumns>
+
+
+
 
                         </Container>
                         
