@@ -62,7 +62,7 @@ class Index extends Component {
                                             <Card.Footer className=" text-white d-inline w-100 border border-0 m-0 p-0 bg-transparent">
                                                 <Row className="user-func">
                                                     <Col xs={2} sm={2} md={2} lg={2} xl={2} className="p-0 m-0" fluid>
-                                                        <Image src={User} className="w-50 p-0 m-0" roundedCircle fluid  />
+                                                        <Image src={User} className="w-50 p-0 ml-1" roundedCircle fluid  />
                                                     </Col>
                                                     <Col className="p-1 p-sm-0 p-xs-0 m-0 align-self-center text-nowrap">
                                                         <p className="d-inline sm-14 p-0 m-0 ">John Paul</p>

@@ -132,7 +132,7 @@ button.but_home:focus {
   visibility: visible;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 991px) {
   .sm-24 {
     font-size: 24px;
   }
@@ -145,6 +145,13 @@ button.but_home:focus {
     font-size: 19.4341px !important;
   }
 
+  .Hover-effect {
+    background-color: rgba(5, 3, 3, 0.5);
+  }
+
+  .user-func {
+    visibility: visible;
+  }
 }
 
 check-font {
