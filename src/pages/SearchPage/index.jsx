@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import Header from "../../components/Header";
+import { CardColumns } from "react-bootstrap"
 
-export class index extends Component {
+class index extends Component {
     render() {
         return (
             <div>
                 <Header/>
-                
+                Lol
+                <CardColumns/>
             </div>
         )
     }
