@@ -7,8 +7,7 @@ class index extends Component {
         return (
             <div>
                 <Header/>
-                Lol
-                <CardColumns/>
+                
             </div>
         )
     }
