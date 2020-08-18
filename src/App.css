@@ -214,6 +214,18 @@ check-font {
   color: #333333;
 }
 
+.bg-color {
+  background-color: #F8F8F8;
+}
+
+.color-7 {
+  color: #787676;
+}
+
+.color-8 {
+  color:  #20A4F3;
+}
+
 .fs-18 {
   font-size: 18px;
 }
@@ -225,6 +237,11 @@ check-font {
 .btn-bg {
   background-color: #20A4F3 !important;
   border-color: #20A4F3 !important;
+}
+
+.shr-bg {
+  background-color: #787676 !important;
+  border-color: #787676 !important;
 }
 
 /* Login Page style class END */
