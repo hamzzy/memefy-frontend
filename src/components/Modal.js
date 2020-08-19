@@ -30,7 +30,7 @@ function MyVerticallyCenteredModal(props) {
   
           <Row className="w-100 m-0">
               <Col xs={"auto"} sm={"auto"} md={"auto"} lg={"auto"} xl={"auto"} className="" fluid>
-                <p className="fs-24 ml-xs-0 mt-3 color-1">Wide Mouth</p>
+                <p className="fs-24 sm-19 ml-xs-0 mt-3 color-1">Wide Mouth</p>
               </Col>
               <Col className="d-flex justify-content-end pl-lg-5 pl-xs-2">
                 <Link to='' className=""><Button type="submit" className="fs-20 shr-bg px-4 rounded-lg d-none d-xs-none d-sm-none d-lg-inline d-xl-inline ml-5 mt-2" size="lg"><FontAwesomeIcon icon={faShareAlt} className="sm-14" />    Share</Button></Link><FontAwesomeIcon icon={faShareAlt} className="d-sm-block d-xs-block d-lg-none d-xl-none  ml-lg-5 mr-5 mt-4 mr-xs-3 ml-xs-2 color-7" size="lg" />
