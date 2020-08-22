@@ -10,7 +10,6 @@ import Image2 from  "../assets/images/Image(2).png";
 import Image3 from "../assets/images/Image(3).png";
 import Image4 from "../assets/images/Image(4).png";
 import Image5 from "../assets/images/Image(5).png";
-import ModalImage0 from "../assets/images/modalImage.png";
 import ModalImage1 from "../assets/images/modal1.png";
 import ModalImage2 from "../assets/images/modal2.png";
 import ModalImage3 from "../assets/images/modal3.png";
