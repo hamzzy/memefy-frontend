@@ -20,7 +20,8 @@ import User from "../assets/images/User.png";
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
-      {...props}
+      show={props.show}
+      onHide={props.onHide}
       size="lg"
       dialogClassName="modal-100w"
       aria-labelledby="contained-modal-title-vcenter"
@@ -43,7 +44,7 @@ function MyVerticallyCenteredModal(props) {
     
         <Row className="d-flex flex-column m-0 p-0">
           <Col className=" w-100 p-0 m-0" fluid>
-              <img src={ModalImage0} alt="Memefy Logo" className="w-100" fluid/>
+              <img src={props.src} alt="Memefy" className="w-100" fluid/>
           </Col>
           <Col className="">
             <p className="fs-24 ml-xs-0 mt-3 pl-3 color-1">Similar Meme</p>
@@ -69,11 +70,11 @@ function MyVerticallyCenteredModal(props) {
 
 function Gallery() {
   const [modalShow, setModalShow] = useState(false);
-
+  const [imgSrc, setImgSrc] = useState();
   return (
     <div className="mx-lg-5 mx-md-3  mx-sm-3 mx-xs-4">
       <CardColumns className="bg mr-sm-3 mr-md-3 mr-lg-3 mr-xl-3 ml-0" fluid>
-        <Card style={{ width: '100%' }} className="mb-md-5 mr-md-5 mb-sm-5 mr-sm-5 mb-lg-5 mr-lg-5"onClick={() => setModalShow(true)}>
+        <Card style={{ width: '100%' }} className="mb-md-5 mr-md-5 mb-sm-5 mr-sm-5 mb-lg-5 mr-lg-5"onClick={() => {setModalShow(true); setImgSrc(Image0)}}>
             <Card.Img variant="top" src={Image0} />
             <Card.ImgOverlay className="d-inline-flex align-items-end w-100 h-100 Hover-effect m-0 pb-3">
                 <Card.Footer className=" text-white d-inline w-100 border border-0 m-0 p-0 bg-transparent">
@@ -92,7 +93,7 @@ function Gallery() {
                 </Card.Footer>
             </Card.ImgOverlay>
         </Card>
-            <Card style={{ width: '100%' }}onClick={() => setModalShow(true)}>
+            <Card style={{ width: '100%' }}onClick={() => {setModalShow(true); setImgSrc(Image3)}}>
                 <Card.Img variant="top" src={Image3} />
                 <Card.ImgOverlay className="d-inline-flex align-items-end w-100 h-100 Hover-effect m-0 pb-3">
                     <Card.Footer className=" text-white d-inline w-100 border border-0 m-0 p-0 bg-transparent">
@@ -111,7 +112,7 @@ function Gallery() {
                     </Card.Footer>
                 </Card.ImgOverlay>
             </Card>
-            <Card style={{ width: '100%' }} className="mb-md-5 mb-lg-5 mb-xl-5 mb-xs-0 mr-xs-5 mb-sm-5 mr-sm-0 mr-md-5 mr-lg-5 mr-xl-5"onClick={() => setModalShow(true)}>
+            <Card style={{ width: '100%' }} className="mb-md-5 mb-lg-5 mb-xl-5 mb-xs-0 mr-xs-5 mb-sm-5 mr-sm-0 mr-md-5 mr-lg-5 mr-xl-5"onClick={() => {setModalShow(true); setImgSrc(Image1)}}>
                 <Card.Img variant="top" src={Image1} />
                 <Card.ImgOverlay className="d-inline-flex align-items-end w-100 h-100 Hover-effect m-0 pb-3">
                     <Card.Footer className=" text-white d-inline w-100 border border-0 m-0 p-0 bg-transparent">
@@ -130,7 +131,7 @@ function Gallery() {
                     </Card.Footer>
                 </Card.ImgOverlay>
             </Card>
-            <Card style={{ width: '100%' }}onClick={() => setModalShow(true)}>
+            <Card style={{ width: '100%' }}onClick={() => {setModalShow(true); setImgSrc(Image2)}}>
                 <Card.Img variant="top" src={Image2} />
                 <Card.ImgOverlay className="d-inline-flex align-items-end w-100 h-100 Hover-effect m-0 pb-3">
                     <Card.Footer className=" text-white d-inline w-100 border border-0 m-0 p-0 bg-transparent">
@@ -150,7 +151,7 @@ function Gallery() {
                 </Card.ImgOverlay>
             </Card>
                                     
-            <Card style={{ width: '100%' }} className="mb-md-5 mb-lg-5 mb-xl-5 mb-xs-0 mr-xs-5 mb-sm-5 mr-sm-0 mr-md-5 mr-lg-5 mr-xl-5" onClick={() => setModalShow(true)}>
+            <Card style={{ width: '100%' }} className="mb-md-5 mb-lg-5 mb-xl-5 mb-xs-0 mr-xs-5 mb-sm-5 mr-sm-0 mr-md-5 mr-lg-5 mr-xl-5" onClick={() => {setModalShow(true); setImgSrc(Image4)}}>
                 <Card.Img variant="top" src={Image4} />
                 <Card.ImgOverlay className="d-inline-flex align-items-end w-100 h-100 Hover-effect m-0 pb-3">
                     <Card.Footer className=" text-white d-inline w-100 border border-0 m-0 p-0 bg-transparent">
@@ -169,7 +170,7 @@ function Gallery() {
                     </Card.Footer>
                 </Card.ImgOverlay>                           
             </Card>
-            <Card style={{ width: '100%' }} onClick={() => setModalShow(true)}>
+            <Card style={{ width: '100%' }} onClick={() => {setModalShow(true); setImgSrc(Image5)}}>
                 <Card.Img variant="top" src={Image5} />
                 <Card.ImgOverlay className="d-inline-flex align-items-end w-100 h-100 Hover-effect m-0 pb-3">
                     <Card.Footer className=" text-white d-inline w-100 border border-0 m-0 p-0 bg-transparent">
@@ -193,6 +194,7 @@ function Gallery() {
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        src={imgSrc}
       />
     </div>
   );
