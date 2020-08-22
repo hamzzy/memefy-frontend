@@ -132,7 +132,7 @@ button.but_home:focus {
   visibility: visible;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 991px) {
   .sm-24 {
     font-size: 24px;
   }
@@ -142,9 +142,16 @@ button.but_home:focus {
   }
 
   .sm-19 {
-    font-size: 19.4341px;
+    font-size: 19.4341px !important;
   }
 
+  .Hover-effect {
+    background-color: rgba(5, 3, 3, 0.5);
+  }
+
+  .user-func {
+    visibility: visible;
+  }
 }
 
 check-font {
@@ -207,6 +214,18 @@ check-font {
   color: #333333;
 }
 
+.bg-color {
+  background-color: #F8F8F8;
+}
+
+.color-7 {
+  color: #787676;
+}
+
+.color-8 {
+  color:  #20A4F3;
+}
+
 .fs-18 {
   font-size: 18px;
 }
@@ -218,6 +237,11 @@ check-font {
 .btn-bg {
   background-color: #20A4F3 !important;
   border-color: #20A4F3 !important;
+}
+
+.shr-bg {
+  background-color: #787676 !important;
+  border-color: #787676 !important;
 }
 
 /* Login Page style class END */
