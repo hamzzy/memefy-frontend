@@ -26,8 +26,8 @@ class Dashboard extends Component {
                                     </Button>
                                 </Col>   
                             </Row> 
-                            <div className="d-flex flex-column align-items-center mt-5 mb-5">
-                                <Image src={Emptyfolder} className="mb-4" />
+                            <div className="d-flex flex-column align-items-center mt-5">
+                                <Image src={Emptyfolder} className="mb-4 pt-4" />
                                 <p className="color-5 fs-24 txt-prop mb-4">No meme uploaded yet!</p>
                                 <Button  type="submit" className="p-3 px-5 fs-20 btn-bg mb-5">
                                     Upload New Meme
