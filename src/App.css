@@ -302,3 +302,8 @@ check-font {
   line-height: 24px;
   padding-bottom: 20px;
 }
+
+.modal-header-style {
+  background: #F8F8F8;
+  border-radius: 10px 10px 0px 0px;
+}

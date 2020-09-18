@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Header from "../../components/Header";
 import {Tabs,Tab, Form, Button, Col, Row, Image} from "react-bootstrap";
 import ProfileImage from "../../assets/images/profile-img.png";
-import Emptyfolder from "../../assets/images/Empty-Illustration.png";
+import UploadNewMeme from '../../components/UploadNewMemeModal';
 
 
 class Dashboard extends Component {
@@ -26,13 +26,7 @@ class Dashboard extends Component {
                                     </Button>
                                 </Col>   
                             </Row> 
-                            <div className="d-flex flex-column align-items-center mt-5">
-                                <Image src={Emptyfolder} className="mb-4 pt-4" />
-                                <p className="color-5 fs-24 txt-prop mb-4">No meme uploaded yet!</p>
-                                <Button  type="submit" className="p-3 px-5 fs-20 btn-bg mb-5">
-                                    Upload New Meme
-                                </Button>
-                            </div>
+                                <UploadNewMeme/>
                             </div>
                         </Tab>
                         <Tab eventKey="profile" title="Profile" className="tab">
