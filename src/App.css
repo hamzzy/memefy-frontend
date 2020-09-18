@@ -279,11 +279,16 @@ check-font {
   border-bottom: 3px solid #20A4F3;
 }
 
-.form {
+.contain {
   background-color: #FFFFFF;
   padding: 30px;
   margin: 0 auto;
   border-radius: 10px;
+  height: 602px;
+}
+
+.height-1 {
+  height: 744px;
 }
 
 .txt-prop {
@@ -296,12 +301,4 @@ check-font {
   font-weight: normal;
   line-height: 24px;
   padding-bottom: 20px;
-}
-
-#customFile .custom-file-control:lang(en)::after {
-  content: "Select file...";
-}
-
-#customFile .custom-file-control:lang(en)::before {
-  content: "Click me";
 }
