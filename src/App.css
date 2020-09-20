@@ -27,8 +27,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   height:  567px;
-  /* margin-top:-90px; */
-
 }
 
 .navb>a {
@@ -245,3 +243,67 @@ check-font {
 }
 
 /* Login Page style class END */
+
+/* Dashboard styling */
+.tabs {
+  background-color: rgba(32, 164, 243, 0.16);
+  height: 100px;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.tab {
+  background-color: #E5E5E5; 
+  padding: 40px;
+}
+
+.tabs .nav-link {
+  height: 80px;
+  color: #787676;
+  margin-left: 30px;
+}
+
+.tabs .nav-link:focus {
+  border-bottom: 3px solid #20A4F3;
+  color: #20A4F3;
+}
+
+.tabs .nav-link:visited {
+  border-bottom: 3px solid #20A4F3;
+  color: #20A4F3;
+}
+
+.tabs .nav-link:active {
+  border-bottom: 3px solid #20A4F3;
+}
+
+.contain {
+  background-color: #FFFFFF;
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 602px;
+}
+
+.height-1 {
+  height: 744px;
+}
+
+.txt-prop {
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.small-txt-prop {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  padding-bottom: 20px;
+}
+
+.modal-header-style {
+  background: #F8F8F8;
+  border-radius: 10px 10px 0px 0px;
+}
