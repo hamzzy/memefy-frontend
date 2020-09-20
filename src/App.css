@@ -279,6 +279,20 @@ check-font {
   border-bottom: 3px solid #20A4F3;
 }
 
+.file-input {
+  display: none;
+}
+
+.change-btn {
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 22px 37px;
+}
+
+.div-border {
+  border-radius: 50%;
+}
+
 .contain {
   background-color: #FFFFFF;
   padding: 30px;

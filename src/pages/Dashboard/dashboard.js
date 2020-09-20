@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Header from "../../components/Header";
-import {Tabs,Tab, Form, Button, Col, Row, Image} from "react-bootstrap";
-import ProfileImage from "../../assets/images/profile-img.png";
+import {Tabs,Tab, Form, Button, Col, Row} from "react-bootstrap";
 import UploadNewMeme from '../../components/UploadNewMemeModal';
+import ProfilePicturePreview from '../../components/ProfilePicturePreview';
 
 
 class Dashboard extends Component {
@@ -39,16 +39,7 @@ class Dashboard extends Component {
                                 <p className="color-5 fs-24 txt-prop">Profile Picture</p>
                             </Form.Text>
 
-                            <Row className="mb-5 mt-4">
-                                <Col xs={5} sm={2} md={2} lg={2} xl={2} className="" fluid>
-                                    <Image src={ProfileImage} className="w-75" roundedCircle fluid  />
-                                </Col>
-                                <Col className="align-self-center">
-                                    <Button  type="submit" className=" p-3 px-4 fs-20 btn-bg">
-                                        Change
-                                    </Button>
-                                </Col>   
-                            </Row> 
+                            <ProfilePicturePreview/>
 
                             <Form.Row>
                                 <Form.Group as={Col} md="5" controlId="formGridName" className="mr-5 mb-4">
