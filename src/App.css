@@ -27,8 +27,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   height:  567px;
-  /* margin-top:-90px; */
-
 }
 
 .navb>a {
@@ -132,7 +130,7 @@ button.but_home:focus {
   visibility: visible;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 991px) {
   .sm-24 {
     font-size: 24px;
   }
@@ -142,9 +140,16 @@ button.but_home:focus {
   }
 
   .sm-19 {
-    font-size: 19.4341px;
+    font-size: 19.4341px !important;
   }
 
+  .Hover-effect {
+    background-color: rgba(5, 3, 3, 0.5);
+  }
+
+  .user-func {
+    visibility: visible;
+  }
 }
 
 check-font {
@@ -207,6 +212,18 @@ check-font {
   color: #333333;
 }
 
+.bg-color {
+  background-color: #F8F8F8;
+}
+
+.color-7 {
+  color: #787676;
+}
+
+.color-8 {
+  color:  #20A4F3;
+}
+
 .fs-18 {
   font-size: 18px;
 }
@@ -220,4 +237,73 @@ check-font {
   border-color: #20A4F3 !important;
 }
 
+.shr-bg {
+  background-color: #787676 !important;
+  border-color: #787676 !important;
+}
+
 /* Login Page style class END */
+
+/* Dashboard styling */
+.tabs {
+  background-color: rgba(32, 164, 243, 0.16);
+  height: 100px;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.tab {
+  background-color: #E5E5E5; 
+  padding: 40px;
+}
+
+.tabs .nav-link {
+  height: 80px;
+  color: #787676;
+  margin-left: 30px;
+}
+
+.tabs .nav-link:focus {
+  border-bottom: 3px solid #20A4F3;
+  color: #20A4F3;
+}
+
+.tabs .nav-link:visited {
+  border-bottom: 3px solid #20A4F3;
+  color: #20A4F3;
+}
+
+.tabs .nav-link:active {
+  border-bottom: 3px solid #20A4F3;
+}
+
+.contain {
+  background-color: #FFFFFF;
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 602px;
+}
+
+.height-1 {
+  height: 744px;
+}
+
+.txt-prop {
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.small-txt-prop {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  padding-bottom: 20px;
+}
+
+.modal-header-style {
+  background: #F8F8F8;
+  border-radius: 10px 10px 0px 0px;
+}
