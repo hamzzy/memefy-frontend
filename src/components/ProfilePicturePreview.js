@@ -27,15 +27,18 @@ class ProfilePictureChange extends Component {
     render() {
         let imgPreview;
         if (this.state.file) {
-            imgPreview = <Image src={this.state.file} alt='My profile picture' className="" roundedCircle fluid/>;
+            imgPreview = <Image src={this.state.file} alt='My profile picture' className="profileImg" roundedCircle fluid/>;
+            console.log(this.state.file)
         } else {
-            imgPreview = <Image src={ProfileImage} alt='My profile picture' className="" roundedCircle fluid/>;
+            imgPreview = <Image src={ProfileImage} alt='My profile picture' className="profileImg" roundedCircle fluid/>;
         }
         return (
             <div>
                 <Row className="mb-5 mt-4">
-                    <Col xs={5} sm={2} md={2} lg={2} xl={2} className="div-border">
-                            {imgPreview}
+                    <Col xs={5} sm={2} md={2} lg={2} xl={2} >
+                        <div className=" rounded-circle profileImg">
+                             {imgPreview}
+                        </div>
                     </Col>
                     <Col className="align-self-center">
                         <div className="form-group">
@@ -43,9 +46,6 @@ class ProfilePictureChange extends Component {
                                  Change<input type="file"  className=" p-3 px-4 fs-20 btn-bg file-input" onChange={this.uploadSingleFile}/>
                             </label>
                         </div>
-                        {/* <Button  type="button" className=" p-3 px-4 fs-20 btn-bg" onClick={this.upload}>
-                            Change
-                        </Button> */}
                     </Col>   
                 </Row>
             </div >

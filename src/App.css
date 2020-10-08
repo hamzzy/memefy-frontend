@@ -289,10 +289,6 @@ check-font {
   padding: 22px 37px;
 }
 
-.div-border {
-  border-radius: 50%;
-}
-
 .contain {
   background-color: #FFFFFF;
   padding: 30px;
@@ -302,7 +298,7 @@ check-font {
 }
 
 .height-1 {
-  height: 744px;
+  height: 800px;
 }
 
 .txt-prop {
@@ -320,4 +316,51 @@ check-font {
 .modal-header-style {
   background: #F8F8F8;
   border-radius: 10px 10px 0px 0px;
+}
+
+.profileImg {
+  width: 171px !important;
+  height: 180px !important;
+  margin: 0 auto;
+  object-fit: cover !important;
+  object-position: top !important;
+}
+
+.upload-btn {
+  width: 93%;
+}
+
+.FilesDragAndDrop__area {
+  /* position: relative; */
+  width: 100%;
+  height: 212px;
+  /* padding: 50px; */
+  color: #43434A;
+  border: 1.5px dashed #787676;
+  border-radius: 7.5px;
+  cursor: pointer;
+}
+
+.FilesDragAndDrop__placeholder {
+  /* position: absolute; */
+  width: 100%;
+  height: 212px;
+  z-index: 9999;
+  /* display: flex; */
+ /* ; align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap */
+  background-color: #e7e7e7;
+  /* border-radius: 12px; */
+  color: #7f8e99;
+  font-size: 24px;
+  opacity: .9;
+  text-align: center;
+  /* line-height: 1.4;  */
+}
+
+.uploadImage {
+  width: 100% !important;
+  height: 210px !important;
+  border-radius: 7.5px !important;
 }

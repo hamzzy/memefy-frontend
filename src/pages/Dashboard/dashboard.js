@@ -61,7 +61,7 @@ class Dashboard extends Component {
 
                                 <Form.Group as={Col} md="5" controlId="formGridChangePassword">
                                 <Form.Label className="fs-20 color-1">Change Password</Form.Label>
-                                <Form.Control type="password" placeholder="" className="p-4"/>
+                                <Form.Control type="password" placeholder="**********" className="p-4" autoComplete="current-password"/>
                                 </Form.Group>
                             </Form.Row>
 
