@@ -26,7 +26,7 @@ class Register extends Component {
                                 />{' '}
                             </Navbar.Brand>
                             {/* Form Container */}
-                            <Container fluid clasName="mw-100 w-100">
+                            <Container fluid className="mw-100 w-100">
 
                                 <Form className="bg-white align-center rounded-lg m-2 mb-5 mb-md-5 mb-lg-5 p-4 mw-100 overlap">
                                     <Form.Text className="head">
