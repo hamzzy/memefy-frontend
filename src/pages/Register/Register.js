@@ -7,7 +7,7 @@ class Register extends Component {
     render() {
         return (
             <Container fluid className="font">
-                    <Row d-flex>
+                    <Row className="d-flex">
 
                         <Col lg={4} md={4} className="bg min-vh-100">
                             {/* Navbar Brand Component */}
@@ -16,13 +16,13 @@ class Register extends Component {
                                     alt="Memefy Logo"
                                     src={mobileLogo}
                                     className="d-block d-sm-block d-md-none d-lg-none d-xl-none ml-4"
-                                    fluid
+                                    fluid="true"
                                 />{' '}
                                  <img
                                     alt="Memefy Logo"
                                     src={logo}
                                     className="d-none d-sm-none d-md-block d-lg-block d-xl-block ml-4"
-                                    fluid
+                                    fluid="true"
                                 />{' '}
                             </Navbar.Brand>
                             {/* Form Container */}
