@@ -17,7 +17,7 @@ class index extends Component {
                         </Jumbotron>
                         <div className="texts">
                             <h1>Wide Mouth</h1>
-                            <p>Browse through our funny meme collection. All our meme are of high quality and can be downloaded for use anywhere - for free.</p>
+                            <p>Browse through our funny meme collection. All our memes are of high quality and can be downloaded for use anywhere - for free.</p>
                         </div>
                     
                    
