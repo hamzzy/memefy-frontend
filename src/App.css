@@ -94,7 +94,15 @@ button.but_home {
   margin-top: 10px;
   font-size: 17px;
 }
-  
+.texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.texts p {
+  width: 50%;
+  text-align: center;
+}
 button.but_home:focus {
   outline: 0;
 }
