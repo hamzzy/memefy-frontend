@@ -138,17 +138,37 @@ button.but_home:focus {
   visibility: visible;
 }
 
+.button-padding {
+  padding: 22px 37px !important;
+}
+
+.fs-20 {
+  font-size: 20px !important;
+}
+
 @media only screen and (max-width: 991px) {
   .sm-24 {
     font-size: 24px;
   }
 
   .sm-14 {
-    font-size: 14.8611px;
+    font-size: 14.8611px !important; 
   }
 
   .sm-19 {
     font-size: 19.4341px !important;
+  }
+
+  .sm-20 {
+    font-size: 20px;
+  }
+
+  .sm-18 {
+    font-size: 18px;
+  }
+
+  .button-padding {
+    padding: 12px 22px !important;
   }
 
   .Hover-effect {
@@ -157,6 +177,15 @@ button.but_home:focus {
 
   .user-func {
     visibility: visible;
+  }
+
+  .contain {
+    height: 667px !important;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -175,7 +204,7 @@ check-font {
 }
 
 .font {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Rubik', sans-serif !important;
 }
 
 .bg-img {
@@ -234,10 +263,6 @@ check-font {
 
 .fs-18 {
   font-size: 18px;
-}
-
-.fs-20 {
-  font-size: 20px !important;
 }
 
 .btn-bg {

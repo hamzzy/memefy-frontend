@@ -11,76 +11,140 @@ import Emptyfolder from "../../assets/images/Empty-Illustration.png";
 class Dashboard extends Component {
     render() {
         return (
-            <div className="font">
-                <Header/>
-                <div className="">
-                    <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" variant="none" className="tabs">
-                        
-                        <Tab eventKey="home" title="My Uploads" className="tab">
-                            <div className="contain">
-                            <Row className="mb-4">
-                                <Col  className="" fluid="true">
-                                <p className="color-5 fs-24 txt-prop"> My Uploads</p>
-                                <p className="color-5 fs-20 small-txt-prop">All meme photos and videos you uploaded will appear here</p>
-                                </Col>
-                                <Col className="d-flex justify-content-end align-items-center">
-                                    <Button  type="submit" className="p-3 px-5 fs-20 btn-bg">
-                                        Upload
-                                    </Button>
-                                </Col>   
-                            </Row> 
-                                <EmptyState />
-                            </div>
-                        </Tab>
-                        <Tab eventKey="profile" title="Profile" className="tab">
-                        
-                        <div className="">
-                        <Form className="contain height-1"> 
-                            <Form.Text className="">
-                                <p className="color-5 fs-24 txt-prop">My Profile</p>
-                                <p className="color-5 fs-20 small-txt-prop">This information will be displayed publicly on meme you uploaded</p>
-                                <p className="color-5 fs-24 txt-prop">Profile Picture</p>
-                            </Form.Text>
+          <div className='font'>
+            <Header />
+            <div className=''>
+              <Tabs
+                defaultActiveKey='profile'
+                id='uncontrolled-tab-example'
+                variant='none'
+                className='tabs'
+              >
+                <Tab eventKey='home' title='My Uploads' className='tab sm-24'>
+                  <div className='contain'>
+                    <Row className='mb-4'>
+                      <Col md='8' xs='8' className='' fluid='true'>
+                        <p className='color-5 fs-24 txt-prop sm-20'>
+                          {' '}
+                          My Uploads
+                        </p>
+                        <p className='color-5 fs-20 small-txt-prop sm-14'>
+                          All meme photos and videos you uploaded will appear
+                          here
+                        </p>
+                      </Col>
+                      <Col
+                        md='4'
+                        xs='4'
+                        className='d-flex justify-content-end align-items-start'
+                      >
+                        <Button
+                          type='submit'
+                          className='fs-20 btn-bg sm-14 button-padding small-button-padding'
+                        >
+                          Upload
+                        </Button>
+                      </Col>
+                    </Row>
+                    <EmptyState />
+                  </div>
+                </Tab>
+                <Tab eventKey='profile' title='Profile' className='tab'>
+                  <div className=''>
+                    <Form className='contain height-1'>
+                      <Form.Text className=''>
+                        <p className='color-5 fs-24 txt-prop'>My Profile</p>
+                        <p className='color-5 fs-20 small-txt-prop'>
+                          This information will be displayed publicly on meme
+                          you uploaded
+                        </p>
+                        <p className='color-5 fs-24 txt-prop'>
+                          Profile Picture
+                        </p>
+                      </Form.Text>
 
-                            <ProfilePicture />
+                      <ProfilePicture />
 
-                            <Form.Row>
-                                <Form.Group as={Col} md="5" controlId="formGridName" className="mr-5 mb-4">
-                                <Form.Label className="fs-20 color-1">Name</Form.Label>
-                                <Form.Control type="text" placeholder="John Paul" className="p-4"/>
-                                </Form.Group>
+                      <Form.Row>
+                        <Form.Group
+                          as={Col}
+                          md='5'
+                          controlId='formGridName'
+                          className='mr-5 mb-4'
+                        >
+                          <Form.Label className='fs-20 color-1'>
+                            Name
+                          </Form.Label>
+                          <Form.Control
+                            type='text'
+                            placeholder='John Paul'
+                            className='p-4'
+                          />
+                        </Form.Group>
 
-                                <Form.Group as={Col} md="5" controlId="formGridLocation">
-                                <Form.Label className="fs-20 color-1">Location</Form.Label>
-                                <Form.Control type="text" placeholder="Nigeria" className="p-4"/>
-                                </Form.Group>
-                            </Form.Row>
+                        <Form.Group
+                          as={Col}
+                          md='5'
+                          controlId='formGridLocation'
+                        >
+                          <Form.Label className='fs-20 color-1'>
+                            Location
+                          </Form.Label>
+                          <Form.Control
+                            type='text'
+                            placeholder='Nigeria'
+                            className='p-4'
+                          />
+                        </Form.Group>
+                      </Form.Row>
 
-                            <Form.Row>
-                                <Form.Group as={Col} md="5" controlId="formGridEmail" className="mr-5 mb-4">
-                                <Form.Label className="fs-20 color-1">Email</Form.Label>
-                                <Form.Control type="email" placeholder="johnpaul@example.com" className="p-4"/>
-                                </Form.Group>
+                      <Form.Row>
+                        <Form.Group
+                          as={Col}
+                          md='5'
+                          controlId='formGridEmail'
+                          className='mr-5 mb-4'
+                        >
+                          <Form.Label className='fs-20 color-1'>
+                            Email
+                          </Form.Label>
+                          <Form.Control
+                            type='email'
+                            placeholder='johnpaul@example.com'
+                            className='p-4'
+                          />
+                        </Form.Group>
 
-                                <Form.Group as={Col} md="5" controlId="formGridChangePassword">
-                                <Form.Label className="fs-20 color-1">Change Password</Form.Label>
-                                <Form.Control type="password" placeholder="**********" className="p-4" autoComplete="current-password"/>
-                                </Form.Group>
-                            </Form.Row>
+                        <Form.Group
+                          as={Col}
+                          md='5'
+                          controlId='formGridChangePassword'
+                        >
+                          <Form.Label className='fs-20 color-1'>
+                            Change Password
+                          </Form.Label>
+                          <Form.Control
+                            type='password'
+                            placeholder='**********'
+                            className='p-4'
+                            autoComplete='current-password'
+                          />
+                        </Form.Group>
+                      </Form.Row>
 
-                            <Button  type="submit" className="mt-3 p-3 px-4 fs-20 btn-bg mb-5">
-                                 Save Changes
-                            </Button>
-                        </Form>
-                            </div>
-                            
-                        </Tab>
-
-                    </Tabs>
-                </div>
-
+                      <Button
+                        type='submit'
+                        className='mt-3 p-3 px-4 fs-20 btn-bg mb-5'
+                      >
+                        Save Changes
+                      </Button>
+                    </Form>
+                  </div>
+                </Tab>
+              </Tabs>
             </div>
-        );
+          </div>
+        )
     }
 }
 
@@ -179,21 +243,26 @@ function EmptyState(props) {
   
     return (
       <>
-        <div className="d-flex flex-column align-items-center mt-5 font">
-          <Image src={Emptyfolder} className="mb-4 pt-4" />
-            <p className="color-5 fs-24 txt-prop mb-4">No meme uploaded yet!</p>
-                <Button  type="submit" className="p-3 px-5 fs-20 btn-bg mb-5" onClick={() => setModalShow(true)}>
-                    Upload New Meme
-                </Button>
+        <div className='d-flex flex-column align-items-center mt-5 font'>
+          <Image src={Emptyfolder} className='mb-4 pt-4' />
+          <p className='color-5 fs-24 txt-prop mb-4 sm-18'>
+            No meme uploaded yet!
+          </p>
+          <Button
+            type='submit'
+            className='fs-20 btn-bg mb-5 sm-14 button-padding'
+            onClick={() => setModalShow(true)}
+          >
+            Upload New Meme
+          </Button>
         </div>
 
         <UploadNewMemeModal
           show={modalShow}
           onHide={() => setModalShow(false)}
         />
-
       </>
-    );
+    )
 }
 
 function DragAndDropPreviews() {
