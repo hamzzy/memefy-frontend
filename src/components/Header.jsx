@@ -13,7 +13,7 @@ export class Header extends Component {
                         alt="Memefy Logo"
                         src={mobileLogo}
                         className="d-inline-block d-sm-inline-block d-md-none d-lg-none d-xl-none align-top"
-                        fluid
+                        fluid = "true"
                     />{' '}
                     <img
                       alt="Memefy Logo"
