@@ -160,7 +160,7 @@ button.but_home:focus {
   }
 
   .sm-20 {
-    font-size: 20px;
+    font-size: 20px !important;
   }
 
   .sm-18 {
@@ -180,12 +180,20 @@ button.but_home:focus {
   }
 
   .contain {
-    height: 667px !important;
+    height: 900px !important;
   }
 
   .tabs {
     display: flex;
     justify-content: space-between;
+  }
+
+  .upload-btn {
+    width: 90%;
+  }
+
+  .fs-10 {
+    font-size: 10px !important;
   }
 }
 
@@ -354,7 +362,7 @@ check-font {
 .profileImg {
   width: 171px !important;
   height: 180px !important;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   object-fit: cover !important;
   object-position: top !important;
 }
@@ -396,4 +404,11 @@ check-font {
   width: 100% !important;
   height: 210px !important;
   border-radius: 7.5px !important;
+}
+
+@media only screen and (max-width: 991px) {
+    .profileImg {
+    width: 90px !important;
+    height: 90px !important;
+  }
 }

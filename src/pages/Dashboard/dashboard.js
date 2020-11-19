@@ -50,15 +50,17 @@ class Dashboard extends Component {
                   </div>
                 </Tab>
                 <Tab eventKey='profile' title='Profile' className='tab'>
-                  <div className=''>
+                  <div className='font'>
                     <Form className='contain height-1'>
                       <Form.Text className=''>
-                        <p className='color-5 fs-24 txt-prop'>My Profile</p>
-                        <p className='color-5 fs-20 small-txt-prop'>
+                        <p className='color-5 fs-24 txt-prop sm-20'>
+                          My Profile
+                        </p>
+                        <p className='color-5 fs-20 small-txt-prop sm-14'>
                           This information will be displayed publicly on meme
                           you uploaded
                         </p>
-                        <p className='color-5 fs-24 txt-prop'>
+                        <p className='color-5 fs-24 txt-prop sm-20'>
                           Profile Picture
                         </p>
                       </Form.Text>
@@ -70,7 +72,7 @@ class Dashboard extends Component {
                           as={Col}
                           md='5'
                           controlId='formGridName'
-                          className='mr-5 mb-4'
+                          className='mr-lg-5 mb-lg-4'
                         >
                           <Form.Label className='fs-20 color-1'>
                             Name
@@ -103,7 +105,7 @@ class Dashboard extends Component {
                           as={Col}
                           md='5'
                           controlId='formGridEmail'
-                          className='mr-5 mb-4'
+                          className='mr-lg-5 mb-lg-4'
                         >
                           <Form.Label className='fs-20 color-1'>
                             Email
@@ -134,7 +136,8 @@ class Dashboard extends Component {
 
                       <Button
                         type='submit'
-                        className='mt-3 p-3 px-4 fs-20 btn-bg mb-5'
+                        className='mt-3 fs-20
+sm-14 button-padding small-button-padding btn-bg mb-5'
                       >
                         Save Changes
                       </Button>
@@ -179,22 +182,41 @@ class ProfilePicture extends Component {
             imgPreview = <Image src={ProfileImage} alt='My profile picture' className="profileImg" roundedCircle fluid/>;
         }
         return (
-            <div>
-                <Row className="mb-5 mt-4">
-                    <Col xs={5} sm={2} md={2} lg={2} xl={2} >
-                        <div className=" rounded-circle profileImg">
-                             {imgPreview}
-                        </div>
-                    </Col>
-                    <Col className="align-self-center">
-                        <div className="form-group">
-                            <label className="fs-20 btn-bg change-btn">
-                                 Change<input type="file"  className=" p-3 px-4 fs-20 btn-bg file-input" onChange={this.uploadSingleFile}/>
-                            </label>
-                        </div>
-                    </Col>   
-                </Row>
-            </div >
+          <div>
+            <Row className='mb-5 mt-4'>
+              <Col
+                xs={4}
+                sm={2}
+                md={2}
+                lg={2}
+                xl={2}
+                className=''
+              >
+                <div className=' rounded-circle profileImg mr-xs-5 mr-sm-5 mr-md-5'>
+                  {imgPreview}
+                </div>
+              </Col>
+              <Col
+                xs={8}
+                sm={10}
+                md={10}
+                lg={10}
+                xl={10}
+                className='align-self-center'
+              >
+                <div className='form-group ml-lg-5 sm-14 button-padding'>
+                  <label className='fs-20 btn-bg change-btn sm-14 button-padding'>
+                    Change
+                    <input
+                      type='file'
+                      className=' p-3 px-4 fs-20 btn-bg file-input sm-14 button-padding'
+                      onChange={this.uploadSingleFile}
+                    />
+                  </label>
+                </div>
+              </Col>
+            </Row>
+          </div>
         )
     }
 }
@@ -202,40 +224,60 @@ class ProfilePicture extends Component {
 function UploadNewMemeModal(props) {
 
     return (
-        <Modal
-          {...props}
-          size="md"
-          aria-labelledby="contained-modal-title-vcenter"
-          centered
+      <Modal
+        {...props}
+        size='md'
+        aria-labelledby='contained-modal-title-vcenter'
+        centered
+      >
+        <Modal.Header
+          closeButton
+          className='modal-header-style font'
         >
-          <Modal.Header closeButton className="modal-header-style">
-            <Modal.Title id="contained-modal-title-vcenter">
-                Upload New Meme
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body className="p-4">
-            <Form>
-                <Form.Group as={Col}  controlId="formGridName" className="mr-5 mb-4">
-                <Form.Label className="fs-20 color-1">Title</Form.Label>
-                <Form.Control type="text" placeholder="Meme title" className="p-4"/>
-                </Form.Group>
+          <Modal.Title
+            id='contained-modal-title-vcenter'
+            className='fs-24 sm-20'
+          >
+            Upload New Meme
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='p-4'>
+          <Form>
+            <Form.Group as={Col} controlId='formGridName' className='mr-5 mb-4'>
+              <Form.Label className='fs-20 color-1'>Title</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Meme title'
+                className='p-4'
+              />
+            </Form.Group>
 
-                <Form.Group as={Col}  controlId="formGridName" className="mr-5 mb-4">
-                <Form.Label className="fs-20 color-1">Upload Image or Video</Form.Label>
-                <DragAndDropPreviews file={props.files}/>
-                </Form.Group>
+            <Form.Group as={Col} controlId='formGridName' className='mr-5 mb-4'>
+              <Form.Label className='fs-20 color-1'>
+                Upload Image or Video
+              </Form.Label>
+              <DragAndDropPreviews file={props.files} />
+            </Form.Group>
 
-                <Form.Group as={Col}  controlId="formGridLocation">
-                <Form.Label className="fs-20 color-1">Category</Form.Label>
-                <Form.Control type="text" placeholder="photo, new..." className="p-4"/>
-                 </Form.Group>
+            <Form.Group as={Col} controlId='formGridLocation'>
+              <Form.Label className='fs-20 color-1'>Category</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='photo, new...'
+                className='p-4'
+              />
+            </Form.Group>
 
-                <Button className="p-3 fs-20 btn-bg mb-5 ml-3 upload-btn mt-3 " onClick={props.onHide}>Upload</Button>
-            </Form>
-           
-          </Modal.Body>
-        </Modal>
-      );
+            <Button
+              className='p-3 fs-20 btn-bg mb-5 ml-3 upload-btn mt-3 '
+              onClick={props.onHide}
+            >
+              Upload
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
+    )
 }
 
 function EmptyState(props) {
@@ -302,7 +344,7 @@ function DragAndDropPreviews() {
           {files.length === 0 && (
             <div className="FilesDragAndDrop__area d-flex flex-column align-items-center font pt-4">
               <Image src={UploadShape} className="mb-3" alt=''/>
-              <p className="text-center fs-18 mb-4">Drag and drop here<br/> or<br/> browse</p>
+              <p className="text-center fs-18 mb-4 fs-10">Drag and drop here<br/> or<br/> browse</p>
             </div>
           )}
 
