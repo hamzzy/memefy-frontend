@@ -1,15 +1,45 @@
 import React, {Component, useEffect, useState} from 'react';
 import Header from "../../components/Header";
 import Modal from 'react-bootstrap/Modal';
+import {useDispatch,useSelector} from "react-redux";
 import {Tabs, Tab, Form, Button, Col, Row, Image} from "react-bootstrap";
 import ProfileImage from "../../assets/images/profile-img.png";
 import UploadShape from '../../assets/images/Shape.png';
+import { Redirect } from 'react-router-dom';
 import {useDropzone} from 'react-dropzone';
 import Emptyfolder from "../../assets/images/Empty-Illustration.png";
 
 
-class Dashboard extends Component {
-    render() {
+const Dashboard=(props)=> {
+
+
+
+  const [name,setName]=useState("");
+ 
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+
+  const { user: currentUser } = useSelector((state) => state.auth);
+  const onChangeName = (e) => {
+    const name = e.target.value;
+    setName(name);
+  };
+
+
+const onChangeEmail = (e) => {
+ const email = e.target.value;
+ setEmail(email);
+};
+
+const onChangePassword = (e) => {
+ const password = e.target.value;
+ setPassword(password);
+};
+
+  if (!currentUser) {
+    return <Redirect to="/login" />;
+  }
+
         return (
           <div className='font'>
             <Header />
@@ -81,26 +111,10 @@ class Dashboard extends Component {
                             type='text'
                             placeholder='John Paul'
                             className='p-4'
+                            value={currentUser.name}
+                            onChange={onChangeName}
                           />
                         </Form.Group>
-
-                        <Form.Group
-                          as={Col}
-                          md='5'
-                          controlId='formGridLocation'
-                        >
-                          <Form.Label className='fs-20 color-1'>
-                            Location
-                          </Form.Label>
-                          <Form.Control
-                            type='text'
-                            placeholder='Nigeria'
-                            className='p-4'
-                          />
-                        </Form.Group>
-                      </Form.Row>
-
-                      <Form.Row>
                         <Form.Group
                           as={Col}
                           md='5'
@@ -112,10 +126,16 @@ class Dashboard extends Component {
                           </Form.Label>
                           <Form.Control
                             type='email'
-                            placeholder='johnpaul@example.com'
+                            placeholder=''
                             className='p-4'
+                            value={currentUser.email}
+                            onChange={onChangeEmail}
+
                           />
                         </Form.Group>
+                      </Form.Row>
+
+                      <Form.Row>
 
                         <Form.Group
                           as={Col}
@@ -130,6 +150,7 @@ class Dashboard extends Component {
                             placeholder='**********'
                             className='p-4'
                             autoComplete='current-password'
+                            onChange={onChangePassword}
                           />
                         </Form.Group>
                       </Form.Row>
@@ -148,8 +169,8 @@ sm-14 button-padding small-button-padding btn-bg mb-5'
             </div>
           </div>
         )
-    }
-}
+    
+        }
 
 class ProfilePicture extends Component {
 

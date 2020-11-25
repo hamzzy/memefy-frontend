@@ -4,8 +4,7 @@ import {Container, Form, Jumbotron,Col,Row} from "react-bootstrap";
 import Footer from '../../components/footer';
 import Gallery from '../../components/Modal';
 
-class Index extends Component {
-    render() {
+const Index= (props)=>{
         return (
             <div className="font bg h-100 pb-5"> 
 
@@ -55,7 +54,7 @@ class Index extends Component {
 
             </div>
         );
-    }
+    
 }
 
 export default Index;
