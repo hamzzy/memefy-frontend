@@ -1,26 +1,32 @@
 import React, {Component, useEffect, useState} from 'react';
 import Header from "../../components/Header";
-import Modal from 'react-bootstrap/Modal';
 import {useDispatch,useSelector} from "react-redux";
-import {Tabs, Tab, Form, Button, Col, Row, Image} from "react-bootstrap";
-import ProfileImage from "../../assets/images/profile-img.png";
-import UploadShape from '../../assets/images/Shape.png';
+import {Tabs, Tab, Form, Button, Col, Row, Image,Card,CardDeck,CardColumns,Popover,OverlayTrigger,popover} from "react-bootstrap";
 import { Redirect } from 'react-router-dom';
-import {useDropzone} from 'react-dropzone';
 import Emptyfolder from "../../assets/images/Empty-Illustration.png";
-
-
+import MemeService from '../../services/meme.service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisH} from '@fortawesome/free-solid-svg-icons'
+import UploadNewMemeModal from '../../components/MemeModal';
+import ProfilePicture from '../../components/ProfilePictures';
 const Dashboard=(props)=> {
 
 
 
-  const [name,setName]=useState("");
- 
+    const [name,setName]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+    const [content, setContent] = useState([]);
+    const [modalShow, setModalShow] = useState(false);
+    const [show, setShow] = useState(false);
+    const [target, setTarget] = useState(null);
+    const [memcat,setMemecat] = useState([]);
+    // const ref = useRef(null);
+    const { user: currentUser } = useSelector((state) => state.auth);
+    // const {  } = useSelector(state => state.message);
 
-  const { user: currentUser } = useSelector((state) => state.auth);
-  const onChangeName = (e) => {
+
+    const onChangeName = (e) => {
     const name = e.target.value;
     setName(name);
   };
@@ -36,9 +42,49 @@ const onChangePassword = (e) => {
  setPassword(password);
 };
 
+
+
+
+
+
+const handleClick = (event) => {
+  setShow(!show);
+  setTarget(event.target);
+};
+
+useEffect(() => {
+  MemeService.UserMeme().then(
+    (response) => {
+      setContent(response.data);
+      console.log(response.data);
+    },
+    (error) => {
+      const _content =
+        (error.response && error.response.data) ||
+        error.message ||
+        error.toString();
+
+      setContent(_content);
+    }
+  );
+
+
+  MemeService.MemeCat().then((response) => {
+    setMemecat(response.data.results);
+
+    console.log(response.data.results);
+  },
+  (error) => {
+    const _content =error.response.data;
+     setMemecat(_content);
+  }
+  )
+}, []);
+
   if (!currentUser) {
     return <Redirect to="/login" />;
   }
+
 
         return (
           <div className='font'>
@@ -71,14 +117,62 @@ const onChangePassword = (e) => {
                         <Button
                           type='submit'
                           className='fs-20 btn-bg sm-14 button-padding small-button-padding'
+                          onClick={() => setModalShow(true)}
+
                         >
                           Upload
                         </Button>
+
+
+                        <UploadNewMemeModal
+                          show={modalShow}
+                          onHide={() => setModalShow(false)}
+                          cat={memcat.map((data)=> data.name)}
+                        />
                       </Col>
                     </Row>
-                    <EmptyState />
+<Row>
+<Col md='5' xs='2' className=''>
+
+        {content.length > 0 ? (
+            <CardDeck className="mb-md-2 mr-md-2 mb-sm-2 mr-sm-2 mb-lg-2 mr-lg-1">
+                   {content.map((data)=>
+                 <Card style={{width: '18rem'}} >
+                   <Card.Img variant="top" src={data.fileURL} />
+                     <Row>
+                       <Col>
+                     <Card.Title>{data.title}</Card.Title>
+                     <FontAwesomeIcon icon={faEllipsisH} size="lg" /> 
+                     </Col>
+                     </Row>   
+                 </Card>
+                 )}
+              </CardDeck>
+                  ):(
+                <div className='d-flex flex-column align-items-center mt-5 font'>
+
+                    <Image src={Emptyfolder} className='mb-4 pt-4' />
+                <p className='color-5 fs-24 txt-prop mb-4 sm-18'>
+                  No meme uploaded yet!
+                </p>
+                <Button
+                  type='submit'
+                  className='fs-20 btn-bg mb-5 sm-14 button-padding'
+                >
+                  Upload New Meme
+                </Button>
+                </div>
+                  )}
+</Col>
+</Row>
+                </div>
+<div>
+
+                   
+
                   </div>
                 </Tab>
+                
                 <Tab eventKey='profile' title='Profile' className='tab'>
                   <div className='font'>
                     <Form className='contain height-1'>
@@ -172,212 +266,20 @@ sm-14 button-padding small-button-padding btn-bg mb-5'
     
         }
 
-class ProfilePicture extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            file: null
-        }
-        this.uploadSingleFile = this.uploadSingleFile.bind(this)
-        this.upload = this.upload.bind(this)
-    }
 
-    uploadSingleFile(e) {
-        this.setState({
-            file: URL.createObjectURL(e.target.files[0])
-        })
-    }
 
-    upload(e) {
-        e.preventDefault()
-        console.log(this.state.file)
-    }
 
-    render() {
-        let imgPreview;
-        if (this.state.file) {
-            imgPreview = <Image src={this.state.file} alt='My profile picture' className="profileImg" roundedCircle fluid/>;
-            console.log(this.state.file)
-        } else {
-            imgPreview = <Image src={ProfileImage} alt='My profile picture' className="profileImg" roundedCircle fluid/>;
-        }
-        return (
-          <div>
-            <Row className='mb-5 mt-4'>
-              <Col
-                xs={4}
-                sm={2}
-                md={2}
-                lg={2}
-                xl={2}
-                className=''
-              >
-                <div className=' rounded-circle profileImg mr-xs-5 mr-sm-5 mr-md-5'>
-                  {imgPreview}
-                </div>
-              </Col>
-              <Col
-                xs={8}
-                sm={10}
-                md={10}
-                lg={10}
-                xl={10}
-                className='align-self-center'
-              >
-                <div className='form-group ml-lg-5 sm-14 button-padding'>
-                  <label className='fs-20 btn-bg change-btn sm-14 button-padding'>
-                    Change
-                    <input
-                      type='file'
-                      className=' p-3 px-4 fs-20 btn-bg file-input sm-14 button-padding'
-                      onChange={this.uploadSingleFile}
-                    />
-                  </label>
-                </div>
-              </Col>
-            </Row>
-          </div>
-        )
-    }
-}
-
-function UploadNewMemeModal(props) {
-
-    return (
-      <Modal
-        {...props}
-        size='md'
-        aria-labelledby='contained-modal-title-vcenter'
-        centered
-      >
-        <Modal.Header
-          closeButton
-          className='modal-header-style font'
-        >
-          <Modal.Title
-            id='contained-modal-title-vcenter'
-            className='fs-24 sm-20'
-          >
-            Upload New Meme
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='p-4'>
-          <Form>
-            <Form.Group as={Col} controlId='formGridName' className='mr-5 mb-4'>
-              <Form.Label className='fs-20 color-1'>Title</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Meme title'
-                className='p-4'
-              />
-            </Form.Group>
-
-            <Form.Group as={Col} controlId='formGridName' className='mr-5 mb-4'>
-              <Form.Label className='fs-20 color-1'>
-                Upload Image or Video
-              </Form.Label>
-              <DragAndDropPreviews file={props.files} />
-            </Form.Group>
-
-            <Form.Group as={Col} controlId='formGridLocation'>
-              <Form.Label className='fs-20 color-1'>Category</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='photo, new...'
-                className='p-4'
-              />
-            </Form.Group>
-
-            <Button
-              className='p-3 fs-20 btn-bg mb-5 ml-3 upload-btn mt-3 '
-              onClick={props.onHide}
-            >
-              Upload
-            </Button>
-          </Form>
-        </Modal.Body>
-      </Modal>
-    )
-}
-
-function EmptyState(props) {
-    const [modalShow, setModalShow] = React.useState(false);
+// function EmptyState(props) {
   
-    return (
-      <>
-        <div className='d-flex flex-column align-items-center mt-5 font'>
-          <Image src={Emptyfolder} className='mb-4 pt-4' />
-          <p className='color-5 fs-24 txt-prop mb-4 sm-18'>
-            No meme uploaded yet!
-          </p>
-          <Button
-            type='submit'
-            className='fs-20 btn-bg mb-5 sm-14 button-padding'
-            onClick={() => setModalShow(true)}
-          >
-            Upload New Meme
-          </Button>
-        </div>
-
-        <UploadNewMemeModal
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-        />
-      </>
-    )
-}
-
-function DragAndDropPreviews() {
-    const [files, setFiles] = useState([]);
-    const {getRootProps, getInputProps} = useDropzone({
-      maxFiles: 1,
-      accept: 'image/* video/*',
-      onDrop: acceptedFiles => {
-        setFiles(acceptedFiles.map(file => Object.assign(file, {
-          preview: URL.createObjectURL(file)
-        })));
-      }
-    });
-
-    
-    const thumbs = files.map(file => (
-      <div key={file.name}>
+//     return (
+//       <>
         
-          <img
-            src={file.preview}
-            alt=''
-            className='uploadImage'
-          />
-  
-      </div>
-    ));
-  
-    useEffect(() => () => {
-      // Make sure to revoke the data uris to avoid memory leaks
-      files.forEach(file => URL.revokeObjectURL(file.preview));
-    }, [files]);
-  
-    return (
-      <>
-        <div {...getRootProps({className: 'dropzone'})}>
-          <input {...getInputProps()} />
-          {files.length === 0 && (
-            <div className="FilesDragAndDrop__area d-flex flex-column align-items-center font pt-4">
-              <Image src={UploadShape} className="mb-3" alt=''/>
-              <p className="text-center fs-18 mb-4 fs-10">Drag and drop here<br/> or<br/> browse</p>
-            </div>
-          )}
 
-          {files.length > 0 && (
-            <div>
-              {thumbs}
-            </div>
-           )}
-        </div>
-        
-      </>
-    );
-}
+       
+//       </>
+//     )
+// }
+
 
 export default Dashboard;

@@ -4,7 +4,6 @@ import {Button, Col,Row,Card,CardColumns, Image} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt, faDownload} from '@fortawesome/free-solid-svg-icons'
-import Image0 from  "../assets/images/Image.png";
 import ModalImage1 from "../assets/images/modal1.png";
 import ModalImage2 from "../assets/images/modal2.png";
 import ModalImage3 from "../assets/images/modal3.png";
@@ -68,17 +67,9 @@ function MyVerticallyCenteredModal(props) {
 
 const Gallery =(props)=> {
 
-
-
-
-
   const [modalShow, setModalShow] = useState(false);
   const [imgSrc, setImgSrc] = useState();
-
-
-
-
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState([]);
 
   useEffect(() => {
     MemeService.getPublicmeme().then(
@@ -98,7 +89,7 @@ const Gallery =(props)=> {
   return (
     <div className="mx-lg-5 mx-md-3  mx-sm-3 mx-xs-4">
       <CardColumns className="bg mr-sm-3 mr-md-3 mr-lg-3 mr-xl-3 ml-0" fluid>
-                {content.map((name) =>{
+                {content.map((name) =>
         <Card style={{ width: '100%' }} className="mb-md-5 mr-md-5 mb-sm-5 mr-sm-5 mb-lg-5 mr-lg-5"onClick={() => {setModalShow(true); setImgSrc(name.fileURL)}}>
             <Card.Img variant="top" src={name.fileURL} />
             <Card.ImgOverlay className="d-inline-flex align-items-end w-100 h-100 Hover-effect m-0 pb-3">
@@ -118,7 +109,7 @@ const Gallery =(props)=> {
                 </Card.Footer>
             </Card.ImgOverlay>
         </Card>
-                })}
+                )}
       </CardColumns>
 
       <MyVerticallyCenteredModal

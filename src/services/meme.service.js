@@ -7,8 +7,13 @@ const getPublicmeme = () => {
   return axios.get(API_URL + "meme_list");
 };
 
-function PostMeme () {
-  return axios.Post(API_URL + "meme", { headers: authHeader() });
+const PostMeme =(title,file,meme_type,meme_cat)=>{
+  return axios.Post(API_URL + "meme",{
+    title,
+    file,
+    meme_type,
+    meme_cat
+  } ,{ headers: authHeader() });
 };
 
 const UserDeleteMeme=()=>{
@@ -16,7 +21,7 @@ const UserDeleteMeme=()=>{
 }
 
 const UserMeme=()=>{
-    return axios.get(API_URL + "meme_list",{ headers: authHeader() });
+    return axios.get(API_URL + "meme",{ headers: authHeader() });
 
 }
 
@@ -27,5 +32,8 @@ const MemeCat=()=>{
 
 export default {
   getPublicmeme,
+  UserMeme,
+  PostMeme,
+  MemeCat
  
 };
