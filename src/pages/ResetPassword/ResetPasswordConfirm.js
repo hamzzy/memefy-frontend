@@ -1,6 +1,6 @@
 import React, {Component,useState} from 'react';
 import logo from '../../assets/images/logo.svg';
-import {useSelector} from "react-redux";
+import {useSelector,useDispatch} from "react-redux";
 
 import mobileLogo from '../../assets/images/mobile_Logo.svg';
 import {Container, Form, Navbar, Button, Row, Col} from "react-bootstrap";
@@ -8,48 +8,49 @@ import forget_password_email from '../../services/auth-services';
 import { Redirect } from 'react-router-dom';
 import Authservice from '../../services/auth-services';
 import swal from 'sweetalert';
+import { SET_MESSAGE,} from "../../actions/types";
+const ResetPasswordConfirm=(props)=>{
 
-const ResetPassword=()=>{
 
-
-       const [email,setEmail]=useState("");
+       const [password,setPassword]=useState("");
        const { isLoggedIn } = useSelector(state => state.auth);
        const [loading, setLoading] = useState(false);
+       const { message } = useSelector(state => state.message);
 
-       const onChangeEmail = (e) => {
-        const email = e.target.value;
-        setEmail(email);
+       const dispatch = useDispatch();
+
+       const onChangePassword = (e) => {
+        const pass = e.target.value;
+        setPassword(pass);
       };
+    
+     
 
       const handleLogin = (e) => {
         e.preventDefault();
-    
-       Authservice.forget_password_email(email).then(
+        const uidb64 = props.match.params.uid;
+        const token = props.match.params.token;
+        Authservice.reset_password_confirm(uidb64,token,password).then(
             (response) => {
-                setLoading(true);
 
-                    if (response.status==200) { 
+                    if (response.status === 200) { 
                         swal({
-                            title: "Forget password ",
-                            text: "Check your email for ",
+                            title: "Reset Password",
+                            text: "Password Change sucessfully ",
                             icon: "success",
-                
                           })
                     }
                     
                 },
           (error) => {
-            const _content =error.response.data
-            console.log(_content);
-            // swal({
-            //     title: "Forget password ",
-            //     text: _content,
-            //     icon: "error",
-    
-            //   })
-            setLoading(false);
-
-      
+            const message =(Object.entries(error.response.data).map(([key, value]) => value));
+  
+  
+            dispatch({
+            type: SET_MESSAGE,
+            payload: message,
+            });
+           
           }
         );
      
@@ -82,26 +83,34 @@ const ResetPassword=()=>{
                             </Navbar.Brand>
                             {/* Form Container */}
                             <Container fluid className="mw-100 w-100 h-50">
-
+                            {message && (
+                                <div className="form-group">
+                                            
+                                <div className="alert alert-danger" role="alert">
+                                    {message.map(function(name, index){
+                            return <li key={ index }>{name}</li>;
+                        })}
+                                </div>
+                                </div>
+                            )}
                                 <Form className="bg-white align-middle rounded-lg mt-5 ml-2 mb-5 mb-md-5 mb-lg-5 p-4 mw-100 overlap" onSubmit={handleLogin}>
                                     <Form.Text className="head">
-                                        <p className="color-1">Reset Password</p>
-                                        <p className="color-2">Enter your Email to get a reset link</p>
+                                        <p className="color-2">Enter new passowrd</p>
                                     </Form.Text>
                                     <Form.Group controlId="formBasicEmail">
-                                        <Form.Control size="lg" type="email" placeholder="Email Address" name='email' className="mt-4 p-4 fs-20 color-1" value={email}
-                                    onChange={onChangeEmail} />
+                                        <Form.Control size="lg" type="password" placeholder="Enterpassword" name='password' className="mt-4 p-4 fs-20 color-1" value={password}
+                                    onChange={onChangePassword} />
                                     </Form.Group>
+
+                                    
                                     
                                     <Button type="submit" size="lg" block className="mt-4 p-3 fs-20 btn-bg">
                                     {loading && (
                                                 <span className="spinner-border spinner-border-sm"></span>
                                             )}
-                                        Send password reset link
+                                        Change password
                                     </Button>
-                                    <Form.Text className="fs-20 text-center mt-4">
-                                        <p className="color-3">Remember your password? <a href="/Login" className="">Login</a></p>
-                                    </Form.Text>
+                                    
                                 </Form>
                                 
                             </Container>
@@ -115,4 +124,4 @@ const ResetPassword=()=>{
         );
 }
 
-export default ResetPassword;
+export default ResetPasswordConfirm;

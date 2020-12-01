@@ -1,10 +1,39 @@
-import React, {Component} from 'react';
+import React, {Component,useState,useEffect} from 'react';
 import Header from "../../components/Header";
 import {Container, Form, Jumbotron,Col,Row} from "react-bootstrap";
 import Footer from '../../components/footer';
-import Gallery from '../../components/Modal';
+import Gallery from '../../components/Gallery';
+import MemeService from '../../services/meme.service'
 
 const Index= (props)=>{
+   const [content, setContent] = useState([]);
+   const [search,setSearch]= useState([]);
+  
+    useEffect(() => {
+      MemeService.getPublicmeme().then(
+        (response) => {
+          setContent(response.data);
+          console.log(response.data)
+        },
+        (error) => {
+          const _content =
+            (error.response && error.response.data) ||
+            error.message ||
+            error.toString();
+  
+          setContent(_content);
+        }
+      );
+
+
+    }, 
+
+    
+    []);
+
+
+
+
         return (
             <div className="font bg h-100 pb-5"> 
 
@@ -47,7 +76,12 @@ const Index= (props)=>{
                    
 
                     </Container>
-                        <Gallery/>
+                        <Gallery
+                        
+                        content={content}
+                        
+                        
+                        />
                 </Container>
 
                 <Footer/>

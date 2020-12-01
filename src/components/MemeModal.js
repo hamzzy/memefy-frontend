@@ -21,28 +21,28 @@ const  UploadNewMemeModal=(props)=>{
     // console.log(acceptedFiles);
   };
 
-  const onChangetitle = (e) => {
-    const title = e.target.value;
-    setTitle(title);
+    const onChangetitle = (e) => {
+      const title = e.target.value;
+      setTitle(title);
+    
+    };
   
-  };
-  
 
-  const onChangememetype=(e)=>{
-    const  memetypes= e.target.value;
-    setMemetype(memetypes);
+    const onChangememetype=(e)=>{
+      const  memetypes= e.target.value;
+      setMemetype(memetypes);
+    }
+
+    const onChangememecat=(e)=>{
+      const  memecat= e.target.value;
+      setMemecat(memecat);
+    }
+
+  const uploadMeme=(e)=>{
+    e.preventDefault();
+  console.log(files);
+
   }
-
-  const onChangememecat=(e)=>{
-    const  memecat= e.target.value;
-    setMemecat(memecat);
-  }
-
-const uploadMeme=(e)=>{
-  e.preventDefault();
- console.log(files);
-
-}
 
     return (
       <Modal

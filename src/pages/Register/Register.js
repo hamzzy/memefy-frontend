@@ -122,7 +122,7 @@ const Register =(props)=> {
                                     <Button type="submit" size="lg" block className="mt-4 p-3 fs-20 btn-bg">
                                     {loading && (
                                                 <span className="spinner-border spinner-border-sm"></span>
-                                            )}
+                                    )}
                                         Sign Up
                                     </Button>
                                     <Form.Text className="fs-20 text-center mt-4">

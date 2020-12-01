@@ -9,6 +9,9 @@ import {
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 import ResetPassword from "./pages/ResetPassword/Reset";
+import ResetPasswordConfirm from "./pages/ResetPassword/ResetPasswordConfirm";
+import Activate from "./pages/ResetPassword/Activate";
+
 import Dashboard from "./pages/Dashboard/dashboard";
 import Search from "./pages/SearchPage";
 import Error from "./pages/Error/Error";
@@ -26,6 +29,10 @@ function App() {
           <Route path="/signUp" component={Register}/>
 
           <Route path="/resetpassword" component={ResetPassword} /> 
+          <Route path="/password-reset-confirm/:uid/:token" component={ResetPasswordConfirm} /> 
+          <Route exact path='/activate-email/:token' component={Activate} />
+
+
           <Route path='/dashboard' component={Dashboard}/>
           <Route path='/search'  component={Search}/>
           <Route component={Error}/>

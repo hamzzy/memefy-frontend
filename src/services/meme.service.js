@@ -8,7 +8,7 @@ const getPublicmeme = () => {
 };
 
 const PostMeme =(title,file,meme_type,meme_cat)=>{
-  return axios.Post(API_URL + "meme",{
+  return axios.post(API_URL + "meme",{
     title,
     file,
     meme_type,
@@ -30,6 +30,10 @@ const MemeCat=()=>{
 
 }
 
+
+const MemeSearch=(title)=>{
+  return axios.get(API_URL+'meme_search/?title='+title)
+}
 export default {
   getPublicmeme,
   UserMeme,
