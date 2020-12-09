@@ -19,7 +19,7 @@ Web App
 
 ## Built with
 -  React js 
--  Rdat boostrap
+-  React boostrap
 -  Redux
 -  Axios
 
