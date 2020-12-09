@@ -15,9 +15,9 @@ Web App
 -----
 <img src="img/homepage.jpg">
 
+## Demo link
 
-_______
-### Tools
+## Built with
 -  React js 
 -  Rdat boostrap
 -  Redux
