@@ -10,7 +10,7 @@ const Activate = (props) => {
     useEffect(() => {
        
         Authservice.verify_email(token).then(
-            (response) => {
+            (response) => {     
                     history.push('/login')
                 },
           (error) => {

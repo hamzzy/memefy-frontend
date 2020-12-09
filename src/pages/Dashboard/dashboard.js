@@ -5,10 +5,14 @@ import {Tabs, Tab, Form, Button, Col, Row, Image,Card,CardDeck,CardColumns,Popov
 import { Redirect } from 'react-router-dom';
 import Emptyfolder from "../../assets/images/Empty-Illustration.png";
 import MemeService from '../../services/meme.service';
+import AuthService from '../../services/auth-services';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH} from '@fortawesome/free-solid-svg-icons'
 import UploadNewMemeModal from '../../components/MemeModal';
 import ProfilePicture from '../../components/ProfilePictures';
+import swal from 'sweetalert';
+import { SET_MESSAGE,} from "../../actions/types";
 const Dashboard=(props)=> {
 
 
@@ -21,9 +25,11 @@ const Dashboard=(props)=> {
     const [show, setShow] = useState(false);
     const [target, setTarget] = useState(null);
     const [memcat,setMemecat] = useState([]);
+    const dispatch = useDispatch();
+
     // const ref = useRef(null);
     const { user: currentUser } = useSelector((state) => state.auth);
-    // const {  } = useSelector(state => state.message);
+    const {message} = useSelector(state => state.message);
 
 
     const onChangeName = (e) => {
@@ -46,10 +52,28 @@ const onChangePassword = (e) => {
 
 
 
+const handleUpdate = (e) => {
+  e.preventDefault();
+  console.log(email);
+};
 
 const handleClick = (event) => {
   setShow(!show);
   setTarget(event.target);
+  AuthService.updateUser().then(
+    (response)=>{
+
+
+  },(error)=>{
+    const message =(Object.entries(error.response.data).map(([key, value]) => value));
+  
+  
+            dispatch({
+            type: SET_MESSAGE,
+            payload: message,
+            });
+  })
+
 };
 
 useEffect(() => {
@@ -59,12 +83,8 @@ useEffect(() => {
       console.log(response.data);
     },
     (error) => {
-      const _content =
-        (error.response && error.response.data) ||
-        error.message ||
-        error.toString();
-
-      setContent(_content);
+      const _content =(Object.entries(error.response.data).map(([key, value]) => value));
+// y      setContent(_content);
     }
   );
 
@@ -174,9 +194,8 @@ useEffect(() => {
                 </Tab>
                 
                 <Tab eventKey='profile' title='Profile' className='tab'>
-                  <div className='font'>
-                    <Form className='contain height-1'>
-                      <Form.Text className=''>
+                  <div className='font contain height-1'>
+                  <Form.Text className=''>
                         <p className='color-5 fs-24 txt-prop sm-20'>
                           My Profile
                         </p>
@@ -189,7 +208,8 @@ useEffect(() => {
                         </p>
                       </Form.Text>
 
-                      <ProfilePicture />
+                    <ProfilePicture />
+                    <Form onSubmit={handleUpdate} >               
 
                       <Form.Row>
                         <Form.Group
@@ -203,9 +223,10 @@ useEffect(() => {
                           </Form.Label>
                           <Form.Control
                             type='text'
-                            placeholder='John Paul'
+                            placeholder=""
                             className='p-4'
-                            value={currentUser.name}
+                            name="name"
+                            value=""
                             onChange={onChangeName}
                           />
                         </Form.Group>
@@ -220,45 +241,44 @@ useEffect(() => {
                           </Form.Label>
                           <Form.Control
                             type='email'
-                            placeholder=''
+                            placeholder={currentUser.email}
                             className='p-4'
-                            value={currentUser.email}
+                            name="email"
+                            value=""
                             onChange={onChangeEmail}
 
                           />
                         </Form.Group>
                       </Form.Row>
 
-                      <Form.Row>
-
-                        <Form.Group
-                          as={Col}
-                          md='5'
-                          controlId='formGridChangePassword'
-                        >
-                          <Form.Label className='fs-20 color-1'>
-                            Change Password
-                          </Form.Label>
-                          <Form.Control
-                            type='password'
-                            placeholder='**********'
-                            className='p-4'
-                            autoComplete='current-password'
-                            onChange={onChangePassword}
-                          />
-                        </Form.Group>
-                      </Form.Row>
+                    
 
                       <Button
                         type='submit'
                         className='mt-3 fs-20
 sm-14 button-padding small-button-padding btn-bg mb-5'
                       >
-                        Save Changes
+                        Update Profile
                       </Button>
                     </Form>
+
+
+                    
                   </div>
+
+
+
+
+
+
+
                 </Tab>
+
+
+
+
+
+
               </Tabs>
             </div>
           </div>
