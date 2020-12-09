@@ -30,10 +30,9 @@ _______
   
 
 
-## Team
+## Contributor 
 
 [![WorldSalt]()](https://github.com/worldsalt3) | [![Lakesxo]()](https://github.com/Lakesxo) 
 
 - Ui Design by Webmaye 
 
-## Contributor 
